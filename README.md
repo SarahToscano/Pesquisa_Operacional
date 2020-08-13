@@ -145,7 +145,7 @@ Após isso, deve-se compilar o arquivo, através do comando:
 Dessa forma será exibida a solução do problema de acordo com o seguinte formato:
 
 <p align="center">
-    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_13.png">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_15.png">
   </p>
 
 
