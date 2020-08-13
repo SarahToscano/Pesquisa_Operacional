@@ -82,7 +82,7 @@ Utilizando o Solver  para formular e resolver o problema do fluxo máximo, obtem
 
 Logo, tudo que entra na rede chega no destino.
 
-## Modelagem
+## Modelagem de um problema de fluxo máximo
 
   Um PFM consiste na maximização de determinado fluxo entre uma origem e um destino. Para torná-lo um PFCM será necessário aplicar algumas reformulações ao problema. 
 Inicialmente, o PFM apresenta uma capacidade máxima e uma ausência de custos em seus arco, então a primeira mudança a ser realizada é que todos os arcos serão configurados com custo igual a zero (cij = 0). 
@@ -96,6 +96,63 @@ Inicialmente, o PFM apresenta uma capacidade máxima e uma ausência de custos e
 <p align="center">
     <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_7.png">
   </p>
+  
+  ## Descrição do programa 
+  
+  Nesta seção será realizada a resolução da letra ‘a’ da questão 9.4.3 disponível em [1]. Tal questão é reescrita abaixo. O programa consiste na resolução desta questão:
+  
+  O diagrama da Figura 2 representa um sistema de aquedutos que se origina em três rios (nós R1, R2 e R3) e termina em uma cidade importante (nó T), onde os demais nós são pontos de junção nesse sistema. A Tabela I mostra a quantidade máxima de água que pode ser bombeada diariamente por meio de cada aqueduto.
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_8.png">
+  </p>
+  
+  Desse modo o problema propõe a sua formulação como um problema do fluxo máximo, de modo que maximize o fluxo de água para a cidade. A solução da questão deve incluir a identificação da origem, escoadouro e nós de transbordos. Além disso também é requerido o esquemático da rede completa com a capacidade de cada arco.
+
+
+  ## Lógica de programação
+  
+  Para a formulação do problema apresentado no exercício como um problema de fluxo máximo serão seguidos os passos para transformação apresentados nos tópicos anteriores. Observando a rede fornecida pelo problema percebe-se que a primeira mudança será em relação às origens. Como foi explicado anteriormente um PFM deve possuir apenas uma origem, então neste caso uma origem “fantasma” é adicionada a rede ligando as três origens originais (R1, R2 e R3) a um único ponto. Desse esse novo vértice possui arcos de ligações com R1, R2 e R3, os quais são nós de transporte. Tais modificações na rede são ilustradas na Figura 3.
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_9.png">
+  </p>
+  
+  
+  Em seguida, podemos definir a capacidade dos arcos que saem da origem através da análise da “conservação de fluxo” o qual indica que nenhum fluxo pode ser criado ou destruído pela rede. Desse modo, as demandas dos arcos que saem das suas conexões devem ser iguais aos valores dos arcos que entram no nó. Por exemplo, o R1 possui um fluxo de saída equivalente a 245 (130+115). Assim, como a soma dos valores que entram em um nó devem ser iguais a soma dos valores que saem, tempo que o fluxo que é inserido em R1 deve ter valor máximo de 245. Ou seja, o valor atribuído ao arco que conecta a origem à R1 é equivalente a 245. De modo análogo, o valor do arco  O-R2 é 270 e  O-R3 equivale a  260. A Figura 4 ilustra o esquemático completo da rede com a atribuição dos valores aos arcos que saem da origem. 
+
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_10.png">
+  </p>
+  
+  
+ ## Instruções para execução do código
+ 
+ O código para  implementação da modelagem descrita anteriormente foi feito com a linguagem Python, com o software de otimização OR-Tools e o solver de programação linear GLOP. Para o uso do código é necessário a instalação do OR-Tools e utilização de algumas de suas bibliotecas para Python, essa etapa pode ser realizada seguindo as instruções encontradas em [2]. 
+	Para executar o programa é necessário definir manualmente qual será o arquivo de texto a ser utilizado como instância. Além disso os arquivos das instâncias devem estar na mesma pasta em que o arquivo main.py está localizado. Para alterar o arquivo de instância a ser utilizado, a linha 9 do arquivo main.py deve ser alterada. Troca-se o texto entre aspas simples destacado em amarelo, pelo nome da instância que você deseja utilizar.
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_11.png">
+  </p>
+
+Após isso, deve-se compilar o arquivo, através do comando:
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_12.png">
+  </p>
+
+Dessa forma será exibida a solução do problema de acordo com o seguinte formato:
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_13.png">
+  </p>
+
+
+
+
+
+
 
 
   
