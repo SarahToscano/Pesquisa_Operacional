@@ -21,7 +21,40 @@ Modelando de forma genérica:
   
   O objetivo é a maximização do fluxo pela rede. Usando-se a convenção de que os somatórios são considerados apenas sobre arcos existentes, a formulação de programação linear desse problema  com a função objetivo para maximizar o fluxo de uma rede ficará assim:
   
-  https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_2.png
+ <p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/1.png">
+  </p>
+  
+  Sujeito a: 
+  
+  <p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_2.png">
+  </p>
+  
+  A primeira restrição se refere ao equilíbrio de fluxos nos nós, e as restrições de menor e maior igual se refere a restrições de capacidade. 
+Utilizando um exemplo do livro 9.4-1* vamos resolver o problema utilizando o metodo do fluxo maximo, para encontrar o padrão de fluxo dado o fluxo máximo da origem ao escoadouro, dado que a capacidade de arco do nó i ao nó j é o número mais próximo ao nó i ao longo do arco entre esses nós. 
+
+  <p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_4.png">
+  </p>
+  
+
+  Sabendo, o problema do fluxo máximo pode ser descrito como a seguir:
+
+-  Todo o fluxo através de uma rede direcionada e conectada origina-se de um nó, denominado origem e termina em outro nó, chamado escoadouro. (A origem e o escoadouro no problema  são, respectivamente, a entrada do parque no nó 1 e a vista panorâmica no nó 7.)
+
+-  Todos os nós restantes são nós de transbordo. (São eles os nós 2. 3, 4, 5 e 6, neste caso)
+
+-  O fluxo através de um arco é permitido apenas na direção indicada pela seta, em que a quantidade máxima de fluxo é fornecida pela capacidade daquele arco. Na origem, todos os arcos apontam no sentido de se afastarem do nó. No escoadouro, todos eles apontam no sentido de se aproximar do nó.
+
+-  O objetivo é maximizar a quantidade total de fluxo da origem para o escoadouro. Essa quantida- de é medida em qualquer uma das duas maneiras equivalentes, ou seja, a quantidade que sai da origem ou, então, a quantidade que chega ao escoadouro.
+
+  Neste problema vamos mandar o máximo possível de fluxo até que chegue no destino 7. Exemplificando, vamos observar a imagem 1 com um exemplo de tubulação de água. Abrindo a torneira na origem 1 e cada um dos arcos representam uma tubulação e queremos que chegue o máximo de água no destino, ou seja, no grafo 7. Podendo utilizar todos os arcos ou o máximo possível de arcos e cada arco tem uma restrição de fluxo máximo. 
+
+  Por exemplo, no arco de 1 para o 2 tem a restrição de capacidade igual a  6, podendo passar por lá um valor menor ou igual a esta capacidade, ou seja, qualquer número entre 0 e 6 pois está é a capacidade máxima daquele arco. Todos os arcos têm uma capacidade máxima determinada, observando todos os arco vamos descobrir qual é o máximo que chega no destino.
+
+  Primeiro vamos determinar nossa variável de decisão, pois temos que decidir quanto vai passar em cada arco.
+
   
   
   
