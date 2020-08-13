@@ -67,7 +67,36 @@ Vamos definir o Z a função objetivo como mostrado na figura 3, para isso vamos
     <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_5.png">
   </p>
   
+  Uma vez definida a função objetivo, vamos definir as restrições. Tomando como exemplo o nó 2 tudo que entra nele vai sair pois é um nó de transbordo. Como mostrado na Figura 4, vamos fazer essa análise para todos os nós as restrições de balanceamento. Vamos também fazer as restrições de fluxo para cada nó de acordo com a capacidade dos arcos.
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_6.png">
+  </p>
   
   
+  Logo, temos as restrições de balanceamento  dos nós e todas as restrições para cada arco. Para cada nó intermediário temos a restrição do nó 1, 2, 3, 4, 5, 6 e para cada arco temos uma restrição.
+Utilizando o Solver  para formular e resolver o problema do fluxo máximo, obtemos a seguinte solução viável: 
+
+ - O fluxo total é igual a 9;
+ - Solução viavel:  X12 = 4, X13 = 4, X14 = 1, X25 = 4, X34 = 1, X35  = 0, X36 = 3 , X46 = 2, X57 = 4, X67 = 5. 
+
+Logo, tudo que entra na rede chega no destino.
+
+## Modelagem
+
+  Um PFM consiste na maximização de determinado fluxo entre uma origem e um destino. Para torná-lo um PFCM será necessário aplicar algumas reformulações ao problema. 
+Inicialmente, o PFM apresenta uma capacidade máxima e uma ausência de custos em seus arco, então a primeira mudança a ser realizada é que todos os arcos serão configurados com custo igual a zero (cij = 0). 
+
+  A segunda mudança é a escolha do valor limite F, que será o limite superior para o fluxo máximo que irá passar pela rede. Entre os nós da rede esse valor estará presente apenas na origem e no escoadouro, pois esses são os únicos nós que possuem oferta e demanda no nosso problema. 
+
+   E por último, a inclusão de um arco ligando diretamente a origem e o escoadouro. Diferente dos demais arcos, este terá um custo igual a -1 e capacidade ilimitada, essas características são responsáveis por fazer com que o PFCM realize o envio do fluxo com os demais arcos.
+   
+   O problema do fluxo de custo mínimo enviará o fluxo viável máximo através dos demais arcos, que alcança o objetivo do problema  do fluxo máximo. Aplicando essa formulação resultará  na figura 5, em  que os números dados próximos arcos originais são as capacidades de arco. 
+
+<p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_7.png">
+  </p>
+
+
   
 
