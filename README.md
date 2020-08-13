@@ -35,7 +35,7 @@ Modelando de forma genérica:
 Utilizando um exemplo do livro 9.4-1* vamos resolver o problema utilizando o metodo do fluxo maximo, para encontrar o padrão de fluxo dado o fluxo máximo da origem ao escoadouro, dado que a capacidade de arco do nó i ao nó j é o número mais próximo ao nó i ao longo do arco entre esses nós. 
 
   <p align="center">
-    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_4.png">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_3.png">
   </p>
   
 
@@ -55,7 +55,17 @@ Utilizando um exemplo do livro 9.4-1* vamos resolver o problema utilizando o met
 
   Primeiro vamos determinar nossa variável de decisão, pois temos que decidir quanto vai passar em cada arco.
 
+ <p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_4.png">
+  </p>
   
+  A figura 2 exemplifica a quantidade que passa em uma dada origem i a um dado destino j. Vamos definir a quantidade para cada arco a ser utilizado.
+Vamos definir o Z a função objetivo como mostrado na figura 3, para isso vamos observar para este caso específico X57 e X67, este são os que chegam diretamente em no destino. Em que cada uma dessas variáveis vai passar o maior valor possível para o vértice 7 para ter o fluxo máximo, dependendo do comportamento do fluxo desde a origem. 
+
+
+ <p align="center">
+    <img src="https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_5.png">
+  </p>
   
   
   
