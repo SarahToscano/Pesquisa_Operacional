@@ -20,4 +20,11 @@ Modelando de forma genérica:
 	- Nó t – Nó de saída
   
   O objetivo é a maximização do fluxo pela rede. Usando-se a convenção de que os somatórios são considerados apenas sobre arcos existentes, a formulação de programação linear desse problema  com a função objetivo para maximizar o fluxo de uma rede ficará assim:
+  
+  https://github.com/SAndradeTC/Pesquisa_Operacional/blob/master/Screenshot_2.png
+  
+  
+  
+  
+  
 
